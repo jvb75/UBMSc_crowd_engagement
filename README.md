@@ -6,7 +6,21 @@ The objectives of the project include extracting 101 audio features from annotat
 
 # Data Analysis
 ## Annotated Dataset Annalysis
-add visual analysis
+```python
+  import librosa, librosa.display
+  import IPython.display as ipd
+  import matplotlib.pyplot as plt
+  from scipy.stats import pearsonr
+  from pydub import AudioSegment
+  import soundfile as sf
+  from matplotlib.patches import Rectangle
+  from sklearn.cluster import KMeans
+  from sklearn.preprocessing import StandardScaler
+  import numpy as np
+  import pandas as pd
+  import seaborn as sns
+  import re, os
+```
 ## Audio Signal Analysis
 ## Feature Importance and Selection
 ## Cluster  Analysis and Dimmentinality Reduction
