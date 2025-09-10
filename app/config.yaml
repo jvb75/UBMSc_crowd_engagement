@@ -1,0 +1,26 @@
+# config.yaml
+models:
+  event: "models/event_cnnlstm_best.pt"
+  engagement: "models/engagement_cnnlstm_best.pt"
+  environment: "models/env_cnnlstm_best.pt"
+  density: null
+
+meta_path: "models/cnn_lstm_multitask_meta.json"
+device: "auto"
+
+audio:
+  sr: 22050
+  max_duration_s: 15
+  normalize: true
+
+features:
+  type: "mel"
+  n_mels: 128
+  n_fft: 2048
+  hop_length: 512
+  t_max: 427
+
+ui:
+  theme: "light"
+  show_waveform: true
+  show_spectrogram: true
