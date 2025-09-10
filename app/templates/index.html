@@ -1,0 +1,707 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowd Engagement Audio Inference</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --success: #4cc9f0;
+            --light: #f8f9fa;
+            --light-blue: #e6f2ff;
+            --gradient-start: #4361ee;
+            --gradient-end: #3a0ca3;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--light-blue) 0%, #ffffff 50%, var(--light-blue) 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .header-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 10px;
+            padding: 12px 24px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.3);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #4cc9f0, #4895ef);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 24px;
+            font-weight: 600;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--primary);
+            transition: transform 0.2s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .progress-container {
+            height: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(135deg, var(--success), #4895ef);
+            transition: width 0.3s ease;
+        }
+        
+        .file-preview {
+            max-height: 200px;
+            overflow-y: auto;
+            background: rgba(248, 249, 250, 0.8);
+            border-radius: 10px;
+        }
+        
+        .result-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-top: 3px solid var(--primary);
+        }
+        
+        .chart-container {
+            height: 280px;
+            position: relative;
+        }
+        
+        .batch-summary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        
+        .nav-pills .nav-link.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 8px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        /* Animation for results */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .file-item {
+            padding: 8px 12px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .file-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .file-size {
+            color: #6c757d;
+            font-size: 0.85rem;
+        }
+        
+        .environment-badge {
+            background: linear-gradient(135deg, #7209b7, #560bad);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .event-badge {
+            background: linear-gradient(135deg, #f72585, #b5179e);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .crowdnoise-badge {
+            background: linear-gradient(135deg, #f9c74f, #f9844a);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .confidence-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-4">
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold header-gradient mb-3">
+                    <i class="fas fa-analytics me-3"></i>
+                    Crowd Engagement Audio Inference
+                </h1>
+                <p class="lead text-muted">Advanced audio analysis for crowd behavior insights</p>
+            </div>
+        </div>
+
+        <!-- Device Info -->
+        <div class="position-fixed top-0 end-0 m-3">
+            <span class="badge bg-primary px-3 py-2">
+                <i class="fas fa-microchip me-2"></i>
+                CPU Mode
+            </span>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                <!-- Upload Section -->
+                <div class="glass-card p-4 mb-4 fade-in-up">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="feature-icon me-3">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <div>
+                            <h4 class="mb-0 text-dark">Upload Audio Files</h4>
+                            <p class="text-muted mb-0">Analyze crowd behavior from audio recordings</p>
+                        </div>
+                    </div>
+                    
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="audioFiles" class="form-label fw-bold text-dark">Select audio files</label>
+                            <input class="form-control form-control-lg" type="file" id="audioFiles" multiple accept=".wav,.mp3,.flac,.ogg">
+                            <div class="form-text">Max 100MB per file, 200MB total. Supported: WAV, MP3, FLAC, OGG</div>
+                        </div>
+                        
+                        <!-- File selection preview -->
+                        <div id="fileSelectionPreview" class="file-preview mb-3 p-3" style="display: none;">
+                            <h6 class="text-primary mb-2">Selected files:</h6>
+                            <div id="fileList"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100 py-3">
+                            <i class="fas fa-play-circle me-2"></i>
+                            Analyze Files
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="glass-card p-4 mb-4" id="progressSection" style="display: none;">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-bold text-dark">Processing Analysis</span>
+                        <span id="progressPercent" class="fw-bold text-primary">0%</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="text-center mt-2 text-muted" id="progressText">Initializing analysis engine</div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="glass-card p-4" id="resultsSection" style="display: none;">
+                    <!-- Batch Summary -->
+                    <div class="batch-summary p-4 rounded mb-4">
+                        <h4 class="text-white mb-3">
+                            <i class="fas fa-chart-bar me-2"></i>
+                            Batch Analysis Summary
+                        </h4>
+                        <div id="batchSummary" class="row"></div>
+                    </div>
+
+                    <!-- Individual Results -->
+                    <h4 class="mb-3 text-dark">
+                        <i class="fas fa-file-alt me-2 text-primary"></i>
+                        Detailed Results
+                    </h4>
+                    <div id="individualResults" class="row"></div>
+
+                    <!-- Download Button -->
+                    <div class="text-center mt-4 pt-3 border-top">
+                        <button class="btn btn-success px-4" id="downloadBtn">
+                            <i class="fas fa-download me-2"></i>
+                            Export Results CSV
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Global variable to store analysis results
+        let analysisResults = [];
+        
+        // DOM elements
+        const uploadForm = document.getElementById('uploadForm');
+        const audioFilesInput = document.getElementById('audioFiles');
+        const fileSelectionPreview = document.getElementById('fileSelectionPreview');
+        const fileList = document.getElementById('fileList');
+        const progressSection = document.getElementById('progressSection');
+        const progressBar = document.querySelector('.progress-bar');
+        const progressPercent = document.getElementById('progressPercent');
+        const progressText = document.getElementById('progressText');
+        const resultsSection = document.getElementById('resultsSection');
+        const batchSummary = document.getElementById('batchSummary');
+        const individualResults = document.getElementById('individualResults');
+        const downloadBtn = document.getElementById('downloadBtn');
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // File input change event
+            audioFilesInput.addEventListener('change', handleFileSelection);
+            
+            // Form submission event
+            uploadForm.addEventListener('submit', handleFormSubmission);
+            
+            // Download button event
+            downloadBtn.addEventListener('click', handleDownload);
+        });
+        
+        // Handle file selection
+        function handleFileSelection(event) {
+            const files = event.target.files;
+            
+            if (files.length === 0) {
+                fileSelectionPreview.style.display = 'none';
+                return;
+            }
+            
+            // Clear previous file list
+            fileList.innerHTML = '';
+            
+            // Add files to the preview
+            let totalSize = 0;
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                totalSize += file.size;
+                
+                const fileItem = document.createElement('div');
+                fileItem.className = 'file-item';
+                fileItem.innerHTML = `
+                    <div>
+                        <i class="fas fa-file-audio text-primary me-2"></i>
+                        <span class="fw-medium">${file.name}</span>
+                    </div>
+                    <div class="file-size">${formatFileSize(file.size)}</div>
+                `;
+                
+                fileList.appendChild(fileItem);
+            }
+            
+            // Show the file preview
+            fileSelectionPreview.style.display = 'block';
+            
+            // Validate total size
+            const maxTotalSize = 200 * 1024 * 1024; // 200MB
+            if (totalSize > maxTotalSize) {
+                alert('Total file size exceeds the 200MB limit. Please select smaller files.');
+                event.target.value = '';
+                fileSelectionPreview.style.display = 'none';
+            }
+        }
+        
+        // Handle form submission
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            
+            const files = audioFilesInput.files;
+            if (files.length === 0) {
+                alert('Please select at least one audio file to analyze.');
+                return;
+            }
+            
+            // Show progress section
+            progressSection.style.display = 'block';
+            resultsSection.style.display = 'none';
+            
+            // Simulate analysis process
+            simulateAnalysis(files);
+        }
+        
+        // Simulate analysis process
+        function simulateAnalysis(files) {
+            // Reset results
+            analysisResults = [];
+            
+            // Update progress
+            updateProgress(5, 'Loading audio files...');
+            
+            // Process each file with simulated delays
+            let processed = 0;
+            const totalFiles = files.length;
+            
+            // Process each file
+            for (let i = 0; i < totalFiles; i++) {
+                setTimeout(() => {
+                    // Simulate processing time for each file
+                    const file = files[i];
+                    
+                    updateProgress(10 + (i * 15), `Analyzing ${file.name}...`);
+                    
+                    // Simulate further processing
+                    setTimeout(() => {
+                        // Generate mock analysis results including environment and event type
+                        const environmentTypes = ['indoor', 'outdoor'];
+                        const eventTypes = ['music', 'speech', 'conversation', 'crowd noise'];
+                        
+                        const result = {
+                            filename: file.name,
+                            duration: (Math.random() * 120 + 30).toFixed(2), // 30-150 seconds
+                            engagement: Math.random() * 100,
+                            excitement: Math.random() * 100,
+                            applause: Math.floor(Math.random() * 20),
+                            laughter: Math.floor(Math.random() * 15),
+                            speechClarity: Math.random() * 100,
+                            environment: environmentTypes[Math.floor(Math.random() * environmentTypes.length)],
+                            environmentConfidence: (Math.random() * 0.5 + 0.5).toFixed(2), // 0.5-1.0
+                            eventType: eventTypes[Math.floor(Math.random() * eventTypes.length)],
+                            eventConfidence: (Math.random() * 0.5 + 0.5).toFixed(2), // 0.5-1.0
+                            timestamp: new Date().toLocaleTimeString()
+                        };
+                        
+                        analysisResults.push(result);
+                        processed++;
+                        
+                        // Update progress
+                        const progress = 10 + (i * 15) + (processed / totalFiles * 60);
+                        updateProgress(progress, `Processed ${processed}/${totalFiles} files...`);
+                        
+                        // If all files processed, show results
+                        if (processed === totalFiles) {
+                            setTimeout(() => {
+                                updateProgress(100, 'Analysis complete!');
+                                setTimeout(() => {
+                                    displayResults();
+                                }, 800);
+                            }, 500);
+                        }
+                    }, 1500);
+                }, i * 800);
+            }
+        }
+        
+        // Update progress bar and text
+        function updateProgress(percent, text) {
+            const progressValue = Math.min(100, Math.max(0, percent));
+            progressBar.style.width = `${progressValue}%`;
+            progressPercent.textContent = `${Math.round(progressValue)}%`;
+            
+            if (text) {
+                progressText.textContent = text;
+            }
+        }
+        
+        // Display analysis results
+        function displayResults() {
+            // Hide progress, show results
+            progressSection.style.display = 'none';
+            resultsSection.style.display = 'block';
+            
+            // Calculate batch summary
+            const totalFiles = analysisResults.length;
+            const avgEngagement = analysisResults.reduce((sum, result) => sum + result.engagement, 0) / totalFiles;
+            const avgExcitement = analysisResults.reduce((sum, result) => sum + result.excitement, 0) / totalFiles;
+            const totalApplause = analysisResults.reduce((sum, result) => sum + result.applause, 0);
+            const totalLaughter = analysisResults.reduce((sum, result) => sum + result.laughter, 0);
+            
+            // Count environment types
+            const environmentCounts = {
+                indoor: analysisResults.filter(r => r.environment === 'indoor').length,
+                outdoor: analysisResults.filter(r => r.environment === 'outdoor').length
+            };
+            
+            // Count event types
+            const eventCounts = {
+                music: analysisResults.filter(r => r.eventType === 'music').length,
+                speech: analysisResults.filter(r => r.eventType === 'speech').length,
+                conversation: analysisResults.filter(r => r.eventType === 'conversation').length,
+                crowdnoise: analysisResults.filter(r => r.eventType === 'crowd noise').length
+            };
+            
+            // Display batch summary
+            batchSummary.innerHTML = `
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="text-center">
+                        <h2 class="fw-bold">${totalFiles}</h2>
+                        <p class="mb-0">Files Analyzed</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="text-center">
+                        <h2 class="fw-bold">${avgEngagement.toFixed(1)}%</h2>
+                        <p class="mb-0">Avg Engagement</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="text-center">
+                        <h2 class="fw-bold">${environmentCounts.indoor}/${environmentCounts.outdoor}</h2>
+                        <p class="mb-0">Indoor/Outdoor</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="text-center">
+                        <h2 class="fw-bold">${eventCounts.music}/${eventCounts.speech}/${eventCounts.conversation}/${eventCounts.crowdnoise}</h2>
+                        <p class="mb-0">Music/Speech/Conversation/Crowd Noise</p>
+                    </div>
+                </div>
+            `;
+            
+            // Display individual results
+            individualResults.innerHTML = '';
+            analysisResults.forEach((result, index) => {
+                const resultCard = document.createElement('div');
+                resultCard.className = 'col-md-6 mb-4';
+                
+                // Determine which badge to use based on event type
+                let eventBadgeClass = 'event-badge';
+                let eventIcon = 'music';
+                
+                if (result.eventType === 'speech') {
+                    eventIcon = 'microphone';
+                } else if (result.eventType === 'conversation') {
+                    eventIcon = 'comments';
+                } else if (result.eventType === 'crowd noise') {
+                    eventBadgeClass = 'crowdnoise-badge';
+                    eventIcon = 'users';
+                }
+                
+                resultCard.innerHTML = `
+                    <div class="result-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0 text-primary">${result.filename}</h5>
+                            <span class="badge bg-primary">${result.duration}s</span>
+                        </div>
+                        
+                        <div class="d-flex mb-3">
+                            <span class="environment-badge me-2">
+                                <i class="fas fa-${result.environment === 'indoor' ? 'home' : 'tree'} me-1"></i>
+                                ${result.environment}
+                                <span class="confidence-badge ms-1">${result.environmentConfidence}</span>
+                            </span>
+                            <span class="${eventBadgeClass}">
+                                <i class="fas fa-${eventIcon} me-1"></i>
+                                ${result.eventType}
+                                <span class="confidence-badge ms-1">${result.eventConfidence}</span>
+                            </span>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <div class="mb-2">
+                                    <span class="fw-medium">Engagement:</span>
+                                    <div class="progress-container mt-1">
+                                        <div class="progress-bar" style="width: ${result.engagement}%"></div>
+                                    </div>
+                                    <small class="text-muted">${result.engagement.toFixed(1)}%</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-2">
+                                    <span class="fw-medium">Excitement:</span>
+                                    <div class="progress-container mt-1">
+                                        <div class="progress-bar" style="width: ${result.excitement}%"></div>
+                                    </div>
+                                    <small class="text-muted">${result.excitement.toFixed(1)}%</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-hands-clapping text-success me-2"></i>
+                                    <span>Applause: ${result.applause}</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-laugh-beam text-warning me-2"></i>
+                                    <span>Laughter: ${result.laughter}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-3 pt-2 border-top">
+                            <small class="text-muted">Analyzed at: ${result.timestamp}</small>
+                        </div>
+                    </div>
+                `;
+                
+                individualResults.appendChild(resultCard);
+            });
+        }
+        
+        // Handle download
+        function handleDownload() {
+            if (analysisResults.length === 0) {
+                alert('No results to download. Please analyze some files first.');
+                return;
+            }
+            
+            downloadResults(analysisResults);
+        }
+        
+        // Enhanced download function with error handling
+        async function downloadResults(results) {
+            try {
+                const downloadBtn = document.getElementById('downloadBtn');
+                const originalText = downloadBtn.innerHTML;
+                
+                // Show loading state
+                downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Exporting...';
+                downloadBtn.disabled = true;
+                
+                // Convert results to CSV
+                const csvContent = convertToCSV(results);
+                
+                // Create download link
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.setAttribute('href', url);
+                link.setAttribute('download', `crowd_analysis_${new Date().toISOString().slice(0,10)}.csv`);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Show success feedback
+                downloadBtn.innerHTML = '<i class="fas fa-check me-2"></i>Downloaded!';
+                setTimeout(() => {
+                    downloadBtn.innerHTML = originalText;
+                    downloadBtn.disabled = false;
+                }, 2000);
+                
+            } catch (error) {
+                console.error('Download error:', error);
+                alert('Error exporting results: ' + error.message);
+                
+                // Reset button
+                const downloadBtn = document.getElementById('downloadBtn');
+                downloadBtn.innerHTML = '<i class="fas fa-download me-2"></i>Export Results CSV';
+                downloadBtn.disabled = false;
+            }
+        }
+        
+        // Convert results to CSV format
+        function convertToCSV(results) {
+            if (results.length === 0) return '';
+            
+            // Extract headers
+            const headers = Object.keys(results[0]);
+            
+            // Create CSV content
+            let csvContent = headers.join(',') + '\n';
+            
+            // Add rows
+            results.forEach(result => {
+                const row = headers.map(header => {
+                    // Escape commas and quotes in values
+                    let value = result[header];
+                    if (typeof value === 'string' && (value.includes(',') || value.includes('"'))) {
+                        value = `"${value.replace(/"/g, '""')}"`;
+                    }
+                    return value;
+                });
+                csvContent += row.join(',') + '\n';
+            });
+            
+            return csvContent;
+        }
+        
+        // Format file size to human-readable format
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+    </script>
+</body>
+</html>
