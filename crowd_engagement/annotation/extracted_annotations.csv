@@ -1,0 +1,101 @@
+file_path,operator,Time_start,Time_end,location,description,density
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0001.PJT\annotation.txt,JT,13h16,13h22,Saltaire park,music crowd noise conversation,3
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0002.PJT\annotation.txt,JT,13h22,13h28,Saltaire park,music crowd noise,3
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0003.PJT\annotation.txt,JT,13h16,13h24,Saltaire park,music crowd noise,1
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0004.PJT\annotation.txt,JT,13h24,13h30,Saltaire park,music crowd noise,2
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0005.PJT\annotation.txt,JT,13h30,13h36,Saltaire park,music crowd noise,1
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0006.PJT\annotation.txt,JT,13h36,13h42,Saltaire park,music crowd noise,1
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0007.PJT\annotation.txt,JT,13h42,13h48,Saltaire park,music crowd noise,2
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0008.PJT\annotation.txt,JT,13h48,13h54,Saltaire park,music crowd noise,2
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0009.PJT\annotation.txt,JT,13h54,14h01,Saltaire park,music crowd noise,2
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0010.PJT\annotation.txt,JT,14h01,14h07,Saltaire park,music crowd noise,2
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0011.PJT\annotation.txt,JT,14h07,14h13,Saltaire park,music crowd noise conversation,2
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0012.PJT\annotation.txt,JT,14h13,14h19,Saltaire park,music crowd noise conversation,5
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0013.PJT\annotation.txt,JT,14h19,14h26,Saltaire park,music crowd noise conversation,5
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0014.PJT\annotation.txt,JT,14h26,14h32,Saltaire park,music crowd noise,6
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0015.PJT\annotation.txt,JT,14h32,14h38,Saltaire park,music crowd noise,6
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0016.PJT\annotation.txt,JT,14h38,14h45,Saltaire park,music crowd noise,6
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0017.PJT\annotation.txt,JT,14h45,14h52,Saltaire park,music crowd noise,6
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0018.PJT\annotation.txt,JT,14h52,14h58,Saltaire park,music crowd noise,6
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0019.PJT\annotation.txt,JT,14h58,15h02,Saltaire park,music crowd noise conversation,6
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0020.PJT\Annotation.txt,JT,14h15,14h21,Centenary square,music crowd noise,8
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0021.PJT\Annotation.txt,JT,14h21,14h27,Centenary square,music crowd noise,8
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0022.PJT\Annotation.txt,JT,14h27,14h34,Centenary square,music crowd noise speech,8
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0023.PJT\Annotation.txt,JT,14h34,14h40,Centenary square,crowd noise music,8
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0024.PJT\Annotation.txt,JT,14h40,14h46,Centenary square,music crowd noise,8
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0025.PJT\Annotation.txt,JT,14h46,14h53,Centenary square,music crowd noise,8
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0026.PJT\Annotation.txt,JT,14h53,14h55,Centenary square,music crowd noise,8
+datasets/bradford25/audio17-18_annotations/firstOne\R26_0027.PJT\Annotation.txt,JT,14h55,14h57,Centenary square,music crowd noise,8
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0001.PJT\annotation.txt,TP,13h30,13h36,Saltaire park,music crowd noise,3
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0002.PJT\annotation.txt,TP,13h36,13h42,Saltaire park,music crowd noise,3
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0003.PJT\annotation.txt,TP,13h42,13h48,Saltaire park,music crowd noise,3
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0004.PJT\annotation.txt,TP,13h48,13h54,Saltaire park,music crowd noise,3
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0005.PJT\annotation.txt,TP,13h54,14h00,Saltaire park,music crowd noise,3
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0006.PJT\annotation.txt,TP,14h00,14h06,Saltaire park,music crowd noise,3
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0007.PJT\annotation.txt,TP,14h06,14h12,Saltaire park,music crowd noise,3
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0008.PJT\annotation.txt,TP,14h12,14h18,Saltaire park,music crowd noise,5
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0009.PJT\annotation.txt,TP,14h18,14h24,Saltaire park,music crowd noise conversation,4
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0010.PJT\annotation.txt,TP,14h24,14h30,Saltaire park,music crowd noise,5
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0011.PJT\annotation.txt,TP,14h30,14h36,Saltaire park,music crowd noise,4
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0012.PJT\annotation.txt,TP,14h36,14h42,Saltaire park,music crowd noise,4
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0013.PJT\annotation.txt,TP,14h42,14h48,Saltaire park,music crowd noise,5
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0014.PJT\annotation.txt,TP,14h48,14h54,Saltaire park,music crowd noise,5
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0015.PJT\annotation.txt,TP,14h54,15h00,Saltaire park,music crowd noise conversation,5
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0016.PJT\annotation.txt,TP,15h00,15h06,Saltaire park,music crowd noise conversation,4
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0017.PJT\annotation.txt,TP,15h06,15h09,Saltaire park,music crowd noise conversation,4
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0019.PJT\Annotation.txt,TP,13h36,13h42,Broadway,music crowd noise,5
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0020.PJT\Annotation.txt,TP,13h42,13h44,Broadway,crowd noise,8
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0021.PJT\Annotation.txt,TP,13h57,14h03,Broadway outdoor,music crowd noise,8
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0022.PJT\Annotation.txt,TP,14h03,14h09,Broadway outdoor,music crowd noise,8
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0023.PJT\Annotation.txt,TP,14h09,14h13,Broadway outdoor,music crowd noise,8
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0024.PJT\Annotation.txt,TP,14h25,14h27,Centenary square,music crowd noise,8
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0025.PJT\Annotation.txt,TP,14h27,14h28,Centenary square,speech,6
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0026.PJT\Annotation.txt,TP,14h28,14h29,Centenary square,crowd noise,5
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0027.PJT\Annotation.txt,TP,14h29,14h35,Centenary square,crowd noise,7
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0028.PJT\Annotation.txt,TP,14h35,14h36,Centenary square,crowd noise,7
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0029.PJT\Annotation.txt,TP,14h37,14h43,Centenary square,crowd noise music,5
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0030.PJT\Annotation.txt,TP,14h43,14h49,Centenary square,crowd noise music,6
+datasets/bradford25/audio17-18_annotations/SecondOne\R26_0031.PJT\Annotation.txt,TP,14h49,14h51,Centenary square,crowd noise,8
+datasets/bradford25/AudioMM\R26_0004.PJT\Annotation.txt,MM,10h16,10h22,Z2,crowd noise,2
+datasets/bradford25/AudioMM\R26_0005.PJT\Annotation.txt,MM,10h22,10h24,Z4,conversation crowd noise,1
+datasets/bradford25/AudioMM\R26_0006.PJT\Annotation.txt,MM,10h24,10h30,Z2,crowd noise,2
+datasets/bradford25/AudioMM\R26_0007.PJT\Annotation.txt,MM,10h31,10h36,Z2,crowd noise,2
+datasets/bradford25/AudioMM\R26_0008.PJT\Annotation.txt,MM,10h38,10h45,Z2,crowd noise,4
+datasets/bradford25/AudioMM\R26_0010.PJT\Annotation.txt,MM,10h48,10h55,Z2,crowd noise,4
+datasets/bradford25/AudioMM\R26_0011.PJT\Annotation.txt,MM,10h56,11h03,Z5,crowd noise,3
+datasets/bradford25/AudioMM\R26_0012.PJT\Annotation.txt,MM,11h04,11h10,Z1,crowd noise,2
+datasets/bradford25/AudioMM\R26_0013.PJT\Annotation.txt,MM,11h10,11h17,Z1,crowd noise,1
+datasets/bradford25/AudioMM\R26_0015.PJT\Annotation.txt,MM,11h18,11h24,Z3,crowd noise,2
+datasets/bradford25/AudioMM\R26_0016.PJT\Annotation.txt,MM,11h25,11h31,Z2,conversation crowd noise,3
+datasets/bradford25/AudioMM\R26_0017.PJT\Annotation.txt,MM,11h32,11h40,Z2,crowd noise,1
+datasets/bradford25/AudioMM\R26_0018.PJT\Annotation.txt,MM,11h41,11h48,Z2,conversation; crowd noise,1
+datasets/bradford25/AudioMM\R26_0019.PJT\Annotation.txt,MM,11h55,12h01,Z2,crowd noise,1
+datasets/bradford25/AudioMM\R26_0020.PJT\Annotation.txt,MM,12h24,12h30,Z2,conversation crowd noise,0
+datasets/bradford25/AudioMM\R26_0022.PJT\Annotation.txt,MM,12h31,12h37,Z3,conversation crowd noise,1
+datasets/bradford25/AudioMM\R26_0023.PJT\Annotation.txt,MM,12h38,12h44,Z2,crowd noise,1
+datasets/bradford25/AudioMM\R26_0024.PJT\Annotation.txt,MM,12h44,12h50,Z3,conversation crowd noise,1
+datasets/bradford25/AudioMM\R26_0025.PJT\Annotation.txt,MM,12h51,12h57,Z2,crowd noise,2
+datasets/bradford25/AudioMM\R26_0027.PJT\Annotation.txt,MM,12h58,13h00,Z2,crowd noise,0
+datasets/bradford25/AudioTO\R26_0001.PJT\Annotation.txt,TP,10h15,10h21,Z3,noise,0
+datasets/bradford25/AudioTO\R26_0002.PJT\Annotation.txt,TP,10h21,10h27,Z1,noise,0
+datasets/bradford25/AudioTO\R26_0003.PJT\Annotation.txt,TP,10h27,10h33,Z4,noise,1
+datasets/bradford25/AudioTO\R26_0004.PJT\Annotation.txt,TP,10h33,10h39,Z1,noise,1
+datasets/bradford25/AudioTO\R26_0005.PJT\Annotation.txt,TP,10h39,10h45,Z2,noise,1
+datasets/bradford25/AudioTO\R26_0006.PJT\Annotation.txt,TP,10h45,10h51,Z3,noise,0
+datasets/bradford25/AudioTO\R26_0007.PJT\Annotation.txt,TP,10h51,10h57,Z1,noise conversation,2
+datasets/bradford25/AudioTO\R26_0008.PJT\Annotation.txt,TP,10h57,11h03,Z5,noise,4
+datasets/bradford25/AudioTO\R26_0009.PJT\Annotation.txt,TP,11h03,11h09,Z2,noise discussion,1
+datasets/bradford25/AudioTO\R26_0010.PJT\Annotation.txt,TP,11h09,11h15,Z1,noise,0
+datasets/bradford25/AudioTO\R26_0011.PJT\Annotation.txt,TP,11h15,11h21,Z3,noise discussion,0
+datasets/bradford25/AudioTO\R26_0012.PJT\Annotation.txt,TP,11h21,11h27,Z5,noise discussion,3
+datasets/bradford25/AudioTO\R26_0013.PJT\Annotation.txt,TP,11h27,11h33,Z2,noise,1
+datasets/bradford25/AudioTO\R26_0014.PJT\Annotation.txt,TP,11h33,11h39,Z1,noise,3
+datasets/bradford25/AudioTO\R26_0015.PJT\Annotation.txt,TP,11h39,11h45,Z2,noise,1
+datasets/bradford25/AudioTO\R26_0016.PJT\Annotation.txt,TP,11h45,11h51,Z5,noise,0
+datasets/bradford25/AudioTO\R26_0017.PJT\Annotation.txt,TP,11h51,11h57,Z3,noise discussion,1
+datasets/bradford25/AudioTO\R26_0018.PJT\Annotation.txt,TP,11h57,12h03,Z4,noise discussion,2
+datasets/bradford25/AudioTO\R26_0019.PJT\Annotation.txt,TP,12h03,12h09,Z4,noise discussion,2
+datasets/bradford25/AudioTO\R26_0020.PJT\Annotation.txt,TP,12h09,12h15,Z4,noise discussion,2
+datasets/bradford25/AudioTO\R26_0021.PJT\Annotation.txt,TP,12h15,12h21,Z1,noise discussion,1
+datasets/bradford25/AudioTO\R26_0022.PJT\Annotation.txt,TP,12h21,12h27,Z4,noise discussion,1
+datasets/bradford25/AudioTO\R26_0023.PJT\Annotation.txt,TP,12h27,12h33,Z1,noise,1
