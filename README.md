@@ -1,6 +1,4 @@
-#  Assessing Crowd Engagement using Artificial Intelligence-based Audio Signal Processing
-This a dissertation project aims to utilize machine learning (ML) and deep learning (DL) models, 
-combined with audio signal processing techniques, to estimate proxy crowd engagement 
-based on annotated audio features, such as density, music, conversation, speech, and crowd noise. 
-Crowd engagement was assessed by analyzing and extracting features from audio recordings collected during
-across Bradford multiculture events.
+#  Assessing Crowd Engagement using AI-based Audio Signal Processing
+The dissertation project titled "Assessing Crowd Engagement Using AI-Based Audio Signal Processing" is part of a Master's program in Artificial Intelligence and Machine Learning. This project analyses audio recordings collected during multicultural events in Bradford, which are part of the festival program celebrating Bradford 2025 City of Culture. 
+
+The objectives of the project include extracting 101 audio features from annotated audio recordings. These recordings will be classified into categories such as music, conversation, speech, crowd noise, and environmental context (indoor or outdoor). Additionally, the project aims to determine crowd density and measure crowd engagement using classical machine learning techniques, including Random Forest, Naïve Bayes, Decision Trees, and Support Vector Machines (SVM), as well as a hybrid deep learning approach using Convolutional Neural Networks (CNN) and Long Short-Term Memory (LSTM) networks. 
