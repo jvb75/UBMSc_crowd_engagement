@@ -1,1 +1,3 @@
-This folder contain the python code to extract audio annotated files context
+This folder contain:
+1. Code for extract annotated audio recordings from files
+2. extracted_annotations Dataset
