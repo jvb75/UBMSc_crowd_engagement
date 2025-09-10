@@ -6,7 +6,8 @@ The objectives of the project include extracting 101 audio features from annotat
 
 # Data Analysis
 ## Annotated Dataset Annalysis
-![Jesse Images](https://github.com/jvb75/UBMSc_crowd_engagement/blob/96fbf2a36b231a1d26a7f2697a8c3d2b329ce679/images/R26_0001_1.WAV_analysis.png)
+
 ## Audio Signal Analysis
+![Audio Signal Analysis](https://github.com/jvb75/UBMSc_crowd_engagement/blob/96fbf2a36b231a1d26a7f2697a8c3d2b329ce679/images/R26_0001_1.WAV_analysis.png)
 ## Feature Importance and Selection
 ## Cluster  Analysis and Dimmentinality Reduction
